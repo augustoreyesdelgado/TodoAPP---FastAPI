@@ -176,7 +176,7 @@
             const data = Object.fromEntries(formData.entries());
 
             if (data.password !== data.password2) {
-                alert("Passwords do not match");
+                alert("Passwords do not match11");
                 return;
             }
 
@@ -189,7 +189,7 @@
                 phone_number: data.phone_number,
                 password: data.password
             };
-
+            //alert(payload.email+" "+payload.username+" "+payload.first_name+" "+payload.last_name+" "+payload.role+" "+payload.phone_number);
             try {
                 const response = await fetch('/auth', {
                     method: 'POST',
@@ -204,10 +204,10 @@
                 } else {
                     // Handle error
                     const errorData = await response.json();
-                    alert(`Error: ${errorData.message}`);
+                    alert(`Error2: ${errorData.message}`);
                 }
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error:3', error);
                 alert('An error occurred. Please try again.');
             }
         });
